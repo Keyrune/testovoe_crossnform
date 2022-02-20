@@ -53,10 +53,10 @@ namespace ConsoleApp1
             var sortedDict = (from entry in triplet orderby entry.Value descending select entry).ToDictionary(pair => pair.Key, pair => pair.Value).Take(10);
 
             Console.WriteLine();
-            Console.WriteLine("Всего найдено {0} не повторяющихся триплетов.", triplet.Count);
+            // Console.WriteLine("Всего найдено {0} не повторяющихся триплетов.", triplet.Count);
             foreach (var pair in sortedDict)
             {
-                Console.WriteLine($"{pair.Key}  {pair.Value}");
+                Console.WriteLine($"{pair.Key} {pair.Value}");
             }
             Console.WriteLine();
 
