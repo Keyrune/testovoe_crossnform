@@ -17,8 +17,6 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-
 
             Console.WriteLine("Введите путь к текстовому файлу:"); // C:\Users\Keyrune\Desktop\testtext.txt
             string adress1 = Console.ReadLine();
@@ -26,6 +24,8 @@ namespace ConsoleApp1
             char[] a = text.ToCharArray();
             Dictionary<string, int> triplet = new Dictionary<string, int>();
             string str;
+
+            stopWatch.Start();
 
             // пройти весь текст и посчитать все триплеты с помощью словаря
             for (int i = 0; i < a.Length - 3; i++)
@@ -63,9 +63,7 @@ namespace ConsoleApp1
 
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00} часов, {1:00} минут, {2:00} секунд, {3:000} миллисекунд",
-                        ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-            Console.WriteLine("Время выполнения программы: " + elapsedTime);
+            Console.WriteLine("Время выполнения программы: " + stopWatch.ElapsedMilliseconds + "ms");
 
             Console.WriteLine();
             Console.WriteLine("Нажмите любую клавишу для выхода из программы");
